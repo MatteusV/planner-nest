@@ -11,7 +11,7 @@ import { Server } from 'socket.io';
 
 @WebSocketGateway({
   cors: {
-    origin: 'https://planner-kohl.vercel.app/',
+    origin: 'https://planner-pi-sable.vercel.app/',
   },
 })
 export class MessagesGateway {

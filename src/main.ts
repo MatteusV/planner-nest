@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'https://planner-kohl.vercel.app',
+    origin: 'https://planner-pi-sable.vercel.app/',
     credentials: true,
   });
   app.use(cookieParser());
