@@ -14,7 +14,7 @@ import { TripsService } from './trips.service';
 import { CreateTripDto } from './dto/create-trip.dto';
 import { RequestAuth } from 'src/@types/request-auth';
 import { Response } from 'express';
-import { env } from 'process';
+import { env } from '../env/index';
 import { Public } from 'src/constant';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { VerifyParticipantDto } from './dto/verify-participant.dto';

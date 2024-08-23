@@ -8,7 +8,7 @@ import { CreateParticipantDto } from './dto/create-participant.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 import { formattedDate } from 'src/utils/formatted-date';
-import { env } from 'process';
+import { env } from '../env/index';
 import { getEmailClient } from 'src/lib/mail';
 import nodemailer from 'nodemailer';
 

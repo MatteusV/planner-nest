@@ -1,5 +1,6 @@
 import { Module, Global } from '@nestjs/common';
 import { createClient } from '@supabase/supabase-js';
+import { env } from 'src/env';
 
 @Global()
 @Module({
@@ -7,10 +8,7 @@ import { createClient } from '@supabase/supabase-js';
     {
       provide: 'SUPABASE_CLIENT',
       useFactory: () => {
-        return createClient(
-          process.env.SUPABASE_URL,
-          process.env.SUPABASE_SERVICE_ROLE,
-        );
+        return createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE);
       },
     },
   ],

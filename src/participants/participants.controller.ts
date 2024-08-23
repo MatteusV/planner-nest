@@ -11,7 +11,7 @@ import { ParticipantsService } from './participants.service';
 import { CreateParticipantDto } from './dto/create-participant.dto';
 import { Public } from 'src/constant';
 import { Response } from 'express';
-import { env } from 'process';
+import { env } from '../env/index';
 
 @Controller('participants')
 export class ParticipantsController {

@@ -12,7 +12,7 @@ import { CreateTripDto } from './dto/create-trip.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import dayjs from 'dayjs';
 import nodemailer from 'nodemailer';
-import { env } from 'process';
+import { env } from '../env/index';
 import { formattedDate } from 'src/utils/formatted-date';
 import { getEmailClient } from 'src/lib/mail';
 import { SupabaseClient } from '@supabase/supabase-js';
