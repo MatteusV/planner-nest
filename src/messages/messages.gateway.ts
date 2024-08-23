@@ -11,7 +11,7 @@ import { Server } from 'socket.io';
 
 @WebSocketGateway({
   cors: {
-    origin: 'http://localhost:3001',
+    origin: 'https://planner-kohl.vercel.app/',
   },
 })
 export class MessagesGateway {
