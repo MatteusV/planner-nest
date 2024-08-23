@@ -8,10 +8,11 @@ import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { Public } from 'src/constant';
 import { Server } from 'socket.io';
+import { env } from 'src/env';
 
 @WebSocketGateway({
   cors: {
-    origin: 'https://planner-pi-sable.vercel.app/',
+    origin: env.WEB_BASE_URL,
   },
 })
 export class MessagesGateway {
