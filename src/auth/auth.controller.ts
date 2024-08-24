@@ -31,7 +31,6 @@ export class AuthController {
     return response
       .cookie('@planner:tokenJwt', token, {
         path: '/',
-        sameSite: true,
       })
       .status(200)
       .json({ token });
