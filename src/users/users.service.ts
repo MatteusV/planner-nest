@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ConflictException,
   Injectable,
   NotFoundException,
   UnauthorizedException,
@@ -15,6 +16,16 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto) {
     const passwordHash = await hash(createUserDto.password, 8);
+
+    const userExist = await this.prisma.user.findUnique({
+      where: {
+        email: createUserDto.email,
+      },
+    });
+
+    if (userExist) {
+      throw new ConflictException('User already exists');
+    }
 
     const user = await this.prisma.user.create({
       data: { ...createUserDto, password: passwordHash },
