@@ -31,6 +31,9 @@ export class AuthController {
     return response
       .cookie('@planner:tokenJwt', token, {
         path: '/',
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'none',
       })
       .status(200)
       .json({ token });
