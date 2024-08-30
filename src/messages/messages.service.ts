@@ -24,6 +24,7 @@ export class MessagesService {
       },
       include: {
         participant: true,
+        user: true,
       },
     });
 
