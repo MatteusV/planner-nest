@@ -22,6 +22,9 @@ export class MessagesService {
       orderBy: {
         created_at: 'asc',
       },
+      include: {
+        participant: true,
+      },
     });
 
     return { messages };
