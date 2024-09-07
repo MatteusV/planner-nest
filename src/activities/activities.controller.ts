@@ -7,6 +7,7 @@ import { Public } from 'src/constant';
 export class ActivitiesController {
   constructor(private readonly activitiesService: ActivitiesService) {}
 
+  @Public()
   @Post(':tripId/trip')
   create(
     @Body() createActivityDto: CreateActivityDto,
@@ -21,6 +22,7 @@ export class ActivitiesController {
     return this.activitiesService.findAll(tripId);
   }
 
+  @Public()
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.activitiesService.remove(id);
