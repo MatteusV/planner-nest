@@ -28,6 +28,7 @@ export class TripsController {
     return this.tripsService.create(createTripDto, request.user.id);
   }
 
+  @Public()
   @Get(':id/confirm')
   async confirm(@Param('id') id: string, @Res() response: Response) {
     const { tripId } = await this.tripsService.confirm(id);
